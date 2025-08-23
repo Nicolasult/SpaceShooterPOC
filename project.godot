@@ -11,7 +11,13 @@ config_version=5
 [application]
 
 config/name="SpaceShooterPOC"
+run/main_scene="uid://dfa5uexpe5r1f"
 config/features=PackedStringArray("4.4", "Forward Plus")
+
+[autoload]
+
+LevelManager="*res://systems/levelmanager.gd"
+Progression="*res://systems/progression.gd"
 
 [display]
 
