@@ -6,6 +6,9 @@ extends CharacterBody2D
 func _ready():
 	hp.connect("died", Callable(self, "_on_dead"))
 func _physics_process(dt):
+	if movement == null:
+		print("movement is NULL")
+		return
 	velocity = movement.velocity(self, dt)
 	move_and_slide()
 func _on_dead():

@@ -1,6 +1,8 @@
-[gd_resource type="Resource" script_class="Movement" load_steps=2 format=3 uid="uid://bdfykkxl2wehv"]
+[gd_resource type="Resource" script_class="MoveStraight" load_steps=2 format=3 uid="uid://bdfykkxl2wehv"]
 
-[ext_resource type="Script" uid="uid://bfb5h0b55f3wo" path="res://gameplay/movement/movement.gd" id="1_2k2ew"]
+[ext_resource type="Script" uid="uid://db04wjocf7nqb" path="res://gameplay/movement/movestraight.gd" id="1_2k2ew"]
 
 [resource]
 script = ExtResource("1_2k2ew")
+speed = 200.0
+dir = Vector2(0, 1)

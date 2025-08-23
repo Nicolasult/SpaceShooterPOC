@@ -1,3 +1,4 @@
+class_name MoveStraight
 extends Movement
 
 @export var speed : float = 200.0
