@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://dht6gjcl43n1b"]
+
+[ext_resource type="Texture2D" uid="uid://c5dx5v7wcb2o5" path="res://assets/ship.png" id="1_2rga7"]
+[ext_resource type="Script" uid="uid://c2plngdrq6frr" path="res://content/player/player.gd" id="1_oq5wi"]
+[ext_resource type="Script" uid="uid://cw3ik2hgi14rl" path="res://gameplay/combat/health.gd" id="2_y66qv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2rga7"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y66qv"]
+atlas = ExtResource("1_2rga7")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq5wi"]
+atlas = ExtResource("1_2rga7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4jjh"]
+atlas = ExtResource("1_2rga7")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ac0f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y66qv")
+}],
+"loop": true,
+"name": &"center",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq5wi")
+}],
+"loop": true,
+"name": &"steering_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4jjh")
+}],
+"loop": true,
+"name": &"steering_right",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y66qv"]
+radius = 6.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_oq5wi")
+move_speed = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2rga7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3ac0f")
+animation = &"steering_right"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_y66qv")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("2_y66qv")
+
+[node name="Weapon" type="Node" parent="."]

@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://bdfykkxl2wehv" path="res://gameplay/movement/MoveStraight.tres" id="2_12jub"]
 [ext_resource type="Script" uid="uid://cw3ik2hgi14rl" path="res://gameplay/combat/health.gd" id="2_def8a"]
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_ggs1w")
 movement = ExtResource("2_12jub")
 
