@@ -28,6 +28,7 @@ script = ExtResource("4_12jub")
 script = ExtResource("7_1wxnl")
 target_path = NodePath("../AnimatedSprite2D")
 damageable_path = NodePath("../Area2D")
+flash_color = Color(0.984052, 0.54296, 0.531759, 1)
 
 [node name="ScaleComponent" type="Node" parent="."]
 script = ExtResource("6_btayh")
