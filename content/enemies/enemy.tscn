@@ -12,6 +12,7 @@ movement = ExtResource("2_12jub")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("3_usgvq")
+health = NodePath("../Health")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 

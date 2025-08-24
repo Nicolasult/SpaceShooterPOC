@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dht6gjcl43n1b"]
+[gd_scene load_steps=14 format=3 uid="uid://dht6gjcl43n1b"]
 
 [ext_resource type="Texture2D" uid="uid://c5dx5v7wcb2o5" path="res://assets/ship.png" id="1_2rga7"]
 [ext_resource type="Script" uid="uid://c2plngdrq6frr" path="res://content/player/player.gd" id="1_oq5wi"]
 [ext_resource type="Script" uid="uid://cw3ik2hgi14rl" path="res://gameplay/combat/health.gd" id="2_y66qv"]
+[ext_resource type="Script" uid="uid://dyqq32q5pt06y" path="res://gameplay/combat/damageable.gd" id="3_gdtqi"]
 [ext_resource type="Script" uid="uid://djepf6qg8b5m0" path="res://content/player/weapon.gd" id="4_3ac0f"]
 [ext_resource type="Script" uid="uid://lt4wwx56ce3x" path="res://gameplay/combat/stats.gd" id="4_i4jjh"]
 [ext_resource type="PackedScene" uid="uid://jun76456thcu" path="res://content/player/laser.tscn" id="5_o23i7"]
@@ -64,6 +65,8 @@ sprite_frames = SubResource("SpriteFrames_3ac0f")
 animation = &"center"
 
 [node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_gdtqi")
+health = NodePath("../Health")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_y66qv")
