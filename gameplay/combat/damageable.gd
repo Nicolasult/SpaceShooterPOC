@@ -14,10 +14,10 @@ func apply_damage(ev: DamageEvent) -> void:
 
 	var final := ev.amount * mult
 
-	# Déclenche le signal "hit" pour les composants visuels (flash, secousse, etc.)
-	emit_signal("hit", final, ev.tags)
-
 	if _hp and _hp.has_method("apply"):
 		_hp.apply(final)
+		# n’émet le flash que si la cible survit
+		if _hp.has_method("is_dead") and not _hp.is_dead():
+			emit_signal("hit", final, ev.tags)
 	else:
 		push_error("Damageable: Health node not set or invalid on " + str(self))
