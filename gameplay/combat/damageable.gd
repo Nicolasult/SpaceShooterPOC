@@ -1,8 +1,9 @@
 extends Area2D
 
-@export var health: NodePath
+signal hit(amount: float, tags: Array)
 
-@onready var _hp: Node = get_node(health)
+@export var health: NodePath
+@onready var _hp: Node = get_node_or_null(health)
 
 func apply_damage(ev: DamageEvent) -> void:
 	var mult := 1.0
@@ -11,4 +12,13 @@ func apply_damage(ev: DamageEvent) -> void:
 		if lm.has_method("get_damage_taken_mult"):
 			mult = lm.get_damage_taken_mult(self)
 
-	_hp.apply(ev.amount * mult)
+	var final := ev.amount * mult
+
+	# Déclenche le signal "hit" pour les composants visuels (flash, secousse, etc.)
+	emit_signal("hit", final, ev.tags)
+	print("hit!")
+
+	if _hp and _hp.has_method("apply"):
+		_hp.apply(final)
+	else:
+		push_error("Damageable: Health node not set or invalid on " + str(self))
