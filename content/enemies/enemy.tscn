@@ -1,14 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw7mysef2xmv7"]
+[gd_scene load_steps=6 format=3 uid="uid://cw7mysef2xmv7"]
 
 [ext_resource type="Script" uid="uid://dfcd3ke6rembe" path="res://content/enemies/enemy.gd" id="1_ggs1w"]
 [ext_resource type="Resource" uid="uid://bdfykkxl2wehv" path="res://gameplay/movement/MoveStraight.tres" id="2_12jub"]
 [ext_resource type="Script" uid="uid://cw3ik2hgi14rl" path="res://gameplay/combat/health.gd" id="2_def8a"]
+[ext_resource type="Script" uid="uid://dyqq32q5pt06y" path="res://gameplay/combat/damageable.gd" id="3_usgvq"]
+[ext_resource type="Script" uid="uid://lt4wwx56ce3x" path="res://gameplay/combat/stats.gd" id="4_12jub"]
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_ggs1w")
 movement = ExtResource("2_12jub")
 
 [node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_usgvq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 
@@ -16,3 +19,4 @@ movement = ExtResource("2_12jub")
 script = ExtResource("2_def8a")
 
 [node name="Stats" type="Node" parent="."]
+script = ExtResource("4_12jub")
