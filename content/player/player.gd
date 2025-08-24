@@ -6,18 +6,17 @@ extends CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
-# Optionnel : clamp dans l’écran
 @export var clamp_to_viewport := true
 var _viewport_rect: Rect2
 
 func _ready():
 	if clamp_to_viewport:
 		_viewport_rect = get_viewport().get_visible_rect()
-	# petit garde-fou si path pas défini
 	if weapon == null and has_node("Weapon"):
 		weapon = $Weapon
 
 func _physics_process(dt):
+	# déplacements
 	var input_vec := Vector2(
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
 		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
@@ -26,17 +25,17 @@ func _physics_process(dt):
 	velocity = input_vec * move_speed
 	move_and_slide()
 
-	# Clamp écran (optionnel)
+	# Clamp écran
 	if clamp_to_viewport:
-		global_position.x = clamp(global_position.x, _viewport_rect.position.x + 8.0, _viewport_rect.end.x - 8.0)
-		global_position.y = clamp(global_position.y, _viewport_rect.position.y + 8.0, _viewport_rect.end.y - 8.0)
+		global_position.x = clamp(global_position.x, _viewport_rect.position.x + 16.0, _viewport_rect.end.x - 16.0)
+		global_position.y = clamp(global_position.y, _viewport_rect.position.y + 16.0, _viewport_rect.end.y - 16.0)
 
 	# Animation selon l’axe X
 	_update_animation(input_vec.x)
 
-	# Tir
-	if Input.is_action_pressed("shoot") and weapon:
-		weapon.fire()
+	# Tir auto → c’est Weapon qui s’occupe du timing
+	if weapon:
+		weapon.auto_fire(dt)
 
 func _update_animation(x_axis: float) -> void:
 	var dead_zone := 0.15

@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dht6gjcl43n1b"]
+[gd_scene load_steps=13 format=3 uid="uid://dht6gjcl43n1b"]
 
 [ext_resource type="Texture2D" uid="uid://c5dx5v7wcb2o5" path="res://assets/ship.png" id="1_2rga7"]
 [ext_resource type="Script" uid="uid://c2plngdrq6frr" path="res://content/player/player.gd" id="1_oq5wi"]
 [ext_resource type="Script" uid="uid://cw3ik2hgi14rl" path="res://gameplay/combat/health.gd" id="2_y66qv"]
+[ext_resource type="Script" uid="uid://djepf6qg8b5m0" path="res://content/player/weapon.gd" id="4_3ac0f"]
 [ext_resource type="Script" uid="uid://lt4wwx56ce3x" path="res://gameplay/combat/stats.gd" id="4_i4jjh"]
+[ext_resource type="PackedScene" uid="uid://jun76456thcu" path="res://content/player/laser.tscn" id="5_o23i7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2rga7"]
 radius = 6.0
@@ -70,6 +72,8 @@ shape = SubResource("CircleShape2D_y66qv")
 script = ExtResource("2_y66qv")
 
 [node name="Weapon" type="Node" parent="."]
+script = ExtResource("4_3ac0f")
+projectile_scene = ExtResource("5_o23i7")
 
 [node name="Stats" type="Node" parent="."]
 script = ExtResource("4_i4jjh")
