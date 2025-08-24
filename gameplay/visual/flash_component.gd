@@ -28,17 +28,13 @@ func _ready() -> void:
 		_damageable.connect("hit", Callable(self, "_on_hit"))
 
 func _on_hit(amount: float, tags: Array) -> void:
-	if _target == null:
+	if _target == null or !is_inside_tree() or !is_instance_valid(_target):
 		return
-	if interrupt_prev and _tween and _tween.is_valid():
-		_tween.kill()
-
-	# Set flash immediately
+		
+	if _tween: _tween.kill()
 	_target.modulate = flash_color
-
-	# Tween back to normal
 	_tween = get_tree().create_tween()
-	_tween.tween_property(_target, "modulate", flash_color, in_duration) # petite “pause” au pic
+	_tween.tween_property(_target, "modulate", flash_color, in_duration)
 	_tween.tween_property(_target, "modulate", back_color, out_duration)
 
 func _find_first_canvas_item(root: Node) -> CanvasItem:

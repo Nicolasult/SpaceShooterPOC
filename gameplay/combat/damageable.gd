@@ -16,7 +16,6 @@ func apply_damage(ev: DamageEvent) -> void:
 
 	# Déclenche le signal "hit" pour les composants visuels (flash, secousse, etc.)
 	emit_signal("hit", final, ev.tags)
-	print("hit!")
 
 	if _hp and _hp.has_method("apply"):
 		_hp.apply(final)

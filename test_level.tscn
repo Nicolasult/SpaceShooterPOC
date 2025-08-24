@@ -5,14 +5,14 @@
 
 [node name="TestLevel" type="Node2D"]
 
-[node name="GreenEnemy" parent="." instance=ExtResource("1_gojnm")]
-position = Vector2(31, 23)
-
-[node name="GreenEnemy2" parent="." instance=ExtResource("1_gojnm")]
-position = Vector2(75, 19)
-
-[node name="GreenEnemy3" parent="." instance=ExtResource("1_gojnm")]
-position = Vector2(109, 43)
-
 [node name="Player" parent="." instance=ExtResource("2_1c2mv")]
 position = Vector2(81, 228)
+
+[node name="GreenEnemy" parent="." instance=ExtResource("1_gojnm")]
+position = Vector2(35, 24)
+
+[node name="GreenEnemy2" parent="." instance=ExtResource("1_gojnm")]
+position = Vector2(81, 20)
+
+[node name="GreenEnemy3" parent="." instance=ExtResource("1_gojnm")]
+position = Vector2(121, 21)
