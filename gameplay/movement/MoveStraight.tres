@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_2k2ew")
-speed = 20.0
+speed = 40.0
 dir = Vector2(0, 1)

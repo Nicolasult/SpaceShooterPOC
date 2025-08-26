@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Wave" load_steps=4 format=3 uid="uid://dn52loom37b8e"]
+
+[ext_resource type="Script" uid="uid://c5j446vgmb2bi" path="res://gameplay/spawning/wave_event.gd" id="1_2bi5s"]
+[ext_resource type="Resource" uid="uid://cqo7agphgu20o" path="res://gameplay/spawning/wave_event2.tres" id="2_2bi5s"]
+[ext_resource type="Script" uid="uid://dv3wx3aqf8rns" path="res://gameplay/spawning/wave.gd" id="3_cp7kk"]
+
+[resource]
+script = ExtResource("3_cp7kk")
+name = "Wave"
+events = Array[ExtResource("1_2bi5s")]([ExtResource("2_2bi5s")])
+metadata/_custom_type_script = "uid://dv3wx3aqf8rns"
