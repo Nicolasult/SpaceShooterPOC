@@ -8,11 +8,11 @@
 script = ExtResource("2_bx70h")
 t = 0.0
 enemy_scene = ExtResource("1_80v6f")
-count = 6
+count = 2
 spawn_every = 0.5
 start_y = -32.0
 x_mode = &"range"
-x_range = Vector2(20, 576)
+x_range = Vector2(20, 140)
 x_fixed = 320.0
 movement = ExtResource("2_ot0bk")
 movement_overrides = {}

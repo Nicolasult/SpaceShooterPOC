@@ -6,7 +6,7 @@ class_name WaveBanner
 @export var fade_time: float = 0.25
 
 var _label: Label
-var _tween: Tween   # <<--- corrige ici
+var _tween: Tween
 
 func _ready():
 	_label = get_node_or_null(label_path)

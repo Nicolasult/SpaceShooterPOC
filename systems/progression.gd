@@ -1,21 +1,22 @@
 extends Node
 
-signal difficulty_changed(new_difficulty)
+signal difficulty_changed(new_difficulty: String)
 
-var _save_path := "user://save.json"
+var _save_path: String = "user://save.json"
 
 var difficulty: String = "Normal"
 var unlocked_level: int = 1
-var best_times := {}  # ex: {"L1:Normal": 32.5}
+var best_times: Dictionary = {}    # ex: {"L1:Normal": 32.5}
 
-func _ready():
+func _ready() -> void:
 	load_save()
 
 func get_difficulty() -> String:
 	return difficulty
 
 func set_difficulty(d: String) -> void:
-	if d == difficulty: return
+	if d == difficulty:
+		return
 	difficulty = d
 	emit_signal("difficulty_changed", d)
 	save()
@@ -35,7 +36,7 @@ func record_time(level_id: String, time_s: float) -> void:
 		save()
 
 func save() -> void:
-	var data = {
+	var data := {
 		"difficulty": difficulty,
 		"unlocked_level": unlocked_level,
 		"best_times": best_times
