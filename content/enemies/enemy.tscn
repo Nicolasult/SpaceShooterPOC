@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cw7mysef2xmv7"]
+[gd_scene load_steps=10 format=3 uid="uid://cw7mysef2xmv7"]
 
 [ext_resource type="Script" uid="uid://dfcd3ke6rembe" path="res://content/enemies/enemy.gd" id="1_ggs1w"]
 [ext_resource type="PackedScene" uid="uid://c46m21ovolokf" path="res://content/effects/explosion.tscn" id="2_1wxnl"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://lt4wwx56ce3x" path="res://gameplay/combat/stats.gd" id="4_12jub"]
 [ext_resource type="Script" uid="uid://bm4fadgab7o8f" path="res://gameplay/visual/scale_component.gd" id="6_btayh"]
 [ext_resource type="Script" uid="uid://cxtc1sqvwjas7" path="res://gameplay/visual/flash_component.gd" id="7_1wxnl"]
+[ext_resource type="Script" uid="uid://wh7idss3t51f" path="res://gameplay/movement/recycle_y.gd" id="9_rfnyo"]
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_ggs1w")
@@ -35,3 +36,6 @@ flash_color = Color(0.984052, 0.54296, 0.531759, 1)
 [node name="ScaleComponent" type="Node" parent="."]
 script = ExtResource("6_btayh")
 target_path = NodePath("../AnimatedSprite2D")
+
+[node name="RecycleY" type="Node" parent="."]
+script = ExtResource("9_rfnyo")

@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://bexqof1csimsb"]
+[gd_scene load_steps=3 format=3 uid="uid://bexqof1csimsb"]
 
-[ext_resource type="Script" uid="uid://cdp8gsr6e7kd0" path="res://spawner.gd" id="1_xsvyn"]
+[ext_resource type="Script" uid="uid://cdp8gsr6e7kd0" path="res://gameplay/spawning/spawner.gd" id="1_xsvyn"]
+[ext_resource type="Script" uid="uid://iil5tspmd1jy" path="res://ui/wave_banner.gd" id="2_auorn"]
 
 [node name="Spawner" type="Node"]
 script = ExtResource("1_xsvyn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WaveBanner" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_auorn")
