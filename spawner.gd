@@ -30,7 +30,7 @@ func _start_next_wave() -> void:
 
 	var w: Wave = waves[_wave_idx]                  # << typé
 	_pending_events = w.events.duplicate(true)
-	_pending_events.sort_custom(self, "_cmp_events")
+	_pending_events.sort_custom(func(a: WaveEvent, b: WaveEvent) -> bool: return a.t < b.t)
 
 	emit_signal("wave_started", _wave_idx, w.name)
 	if _banner and _banner.has_method("show_wave"):
