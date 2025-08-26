@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://by3mhndoqjshx"]
+
+[ext_resource type="PackedScene" uid="uid://bexqof1csimsb" path="res://gameplay/spawning/spawner.tscn" id="1_frwqc"]
+[ext_resource type="PackedScene" uid="uid://u2m5kc5gtpqb" path="res://ui/wave_x.tscn" id="2_58qch"]
+
+[node name="LevelA" type="Node2D"]
+
+[node name="Spawner" parent="." instance=ExtResource("1_frwqc")]
+
+[node name="WaveX" parent="." instance=ExtResource("2_58qch")]
