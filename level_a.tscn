@@ -11,7 +11,6 @@
 
 [node name="Spawner" parent="." instance=ExtResource("1_frwqc")]
 waves = Array[ExtResource("2_n6cyk")]([ExtResource("3_va7m1"), ExtResource("4_w3qxq")])
-viewport_margin = null
 announce_banner_path = NodePath("../CanvasLayer/WaveBanner")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
