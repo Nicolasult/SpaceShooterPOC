@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SpaceShooterPOC"
-run/main_scene="uid://ccvgint3c2t34"
+run/main_scene="uid://by3mhndoqjshx"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
