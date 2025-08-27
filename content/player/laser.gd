@@ -11,6 +11,9 @@ func _ready():
 	# Connecte le signal de collision
 	connect("area_entered", Callable(self, "_on_area_entered"))
 
+func set_damage(v: float) -> void:
+	damage = v
+
 func _physics_process(delta: float) -> void:
 	# Déplacement vers le haut
 	global_position.y -= speed * delta
