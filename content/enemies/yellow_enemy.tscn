@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkrx31anxrl5x"]
+
+[ext_resource type="PackedScene" uid="uid://cw7mysef2xmv7" path="res://content/enemies/enemy.tscn" id="1_g4me4"]
+[ext_resource type="Texture2D" uid="uid://c7aerqeiy6xk8" path="res://assets/yellow_enemy.png" id="2_ili15"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ili15"]
+size = Vector2(14, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5uxi"]
+atlas = ExtResource("2_ili15")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tysxx"]
+atlas = ExtResource("2_ili15")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qjjq3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5uxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tysxx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5uxi"]
+size = Vector2(14, 8)
+
+[node name="YellowEnemy" instance=ExtResource("1_g4me4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damageable" index="0"]
+shape = SubResource("RectangleShape2D_ili15")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DamageDealer" index="0"]
+polygon = PackedVector2Array(-7, -4, 7, -4, 7, 3, 3, 4, 3, 5, -3, 5, -3, 4, -7, 3)
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_qjjq3")
+autoplay = "default"
+
+[node name="Health" parent="." index="3"]
+max_hp = 200.0
+
+[node name="Stats" parent="." index="4"]
+max_hp = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="8"]
+shape = SubResource("RectangleShape2D_o5uxi")
