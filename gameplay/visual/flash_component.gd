@@ -27,7 +27,7 @@ func _ready() -> void:
 	if _damageable and _damageable.has_signal("hit"):
 		_damageable.connect("hit", Callable(self, "_on_hit"))
 
-func _on_hit(amount: float, tags: Array) -> void:
+func _on_hit(_amount: float, _tags: Array) -> void:
 	if _target == null or !is_inside_tree() or !is_instance_valid(_target):
 		return
 		

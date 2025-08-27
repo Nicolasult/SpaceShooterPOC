@@ -12,7 +12,7 @@ func _ready() -> void:
 	_bottom_y = rect.end.y + bottom_offset
 	_top_y = rect.position.y - top_offset
 
-func _process(dt: float) -> void:
+func _process(_dt: float) -> void:
 	var p := get_parent()
 	if p is Node2D and p.global_position.y > _bottom_y:
 		p.global_position.y = _top_y

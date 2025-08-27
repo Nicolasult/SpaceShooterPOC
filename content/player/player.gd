@@ -32,7 +32,7 @@ func _process(dt: float) -> void:
 	# Choix d'animation en fonction de l'input horizontal
 	_update_animation()
 
-func _physics_process(dt: float) -> void:
+func _physics_process(_dt: float) -> void:
 	if _dead:
 		return
 
@@ -76,20 +76,24 @@ func _on_player_dead() -> void:
 		return
 	_dead = true
 
-	# Couper les collisions et le tir
+	# Couper les collisions et le tir — en différé pour éviter le crash
 	if _hitbox:
-		_hitbox.monitoring = false
-		_hitbox.monitorable = false
+		_hitbox.set_deferred("monitoring", false)
+		_hitbox.set_deferred("monitorable", false)
+
 	if _weapon:
 		_weapon.set_process(false)
+		_weapon.set_physics_process(false)
 
-	# Explosion
+	# Explosion (on peut la créer tout de suite)
 	if explosion_scene:
 		var fx: Node = explosion_scene.instantiate()
 		if fx is Node2D:
 			(fx as Node2D).global_position = global_position
 		get_parent().add_child(fx)
 
-	# Masquer puis retirer le joueur
+	# Masquer immédiatement
 	visible = false
-	queue_free()
+
+	# Libération du joueur après la frame courante
+	call_deferred("queue_free")

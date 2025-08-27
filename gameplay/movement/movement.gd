@@ -1,5 +1,5 @@
 class_name Movement
 extends Resource
 
-func velocity(node: Node2D, dt: float) -> Vector2: 
+func velocity(_node: Node2D, _dt: float) -> Vector2: 
 	return Vector2.ZERO

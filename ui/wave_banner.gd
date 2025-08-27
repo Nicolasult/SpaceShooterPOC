@@ -14,7 +14,7 @@ func _ready():
 		_label.visible = false
 		modulate.a = 0.0
 
-func show_wave(index: int, name: String) -> void:
+func show_wave(index: int, _name: String) -> void:
 	if _label == null:
 		return
 	_label.text = "Wave %d" % index

@@ -75,7 +75,7 @@ func _start_next_wave() -> void:
 		_banner_shown_for_idx = display_idx
 		call_deferred("_show_banner", display_idx, w.name)
 
-func _show_banner(i: int, name: String) -> void:
+func _show_banner(i: int, _name: String) -> void:
 	if _banner and _banner.has_method("show_wave"):
 		if debug_logs: print("[Spawner] BANNER show_wave i=", i, " name=", name, " path=", get_path())
 		_banner.call("show_wave", i, name)
