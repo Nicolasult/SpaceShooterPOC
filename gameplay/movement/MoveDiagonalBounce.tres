@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MoveDiagonalBounce" load_steps=2 format=3 uid="uid://5f72kyi0ndoc"]
+
+[ext_resource type="Script" uid="uid://rnxi8mndpd6i" path="res://gameplay/movement/move_diagonal_bounce.gd" id="1_yswvu"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_yswvu")
+down_speed = 20.0
+side_speed = 40.0
+margin = 8.0
+randomize_start_dir = true
+metadata/_custom_type_script = "uid://rnxi8mndpd6i"

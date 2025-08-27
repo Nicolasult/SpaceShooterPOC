@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkrx31anxrl5x"]
+[gd_scene load_steps=9 format=3 uid="uid://bkrx31anxrl5x"]
 
 [ext_resource type="PackedScene" uid="uid://cw7mysef2xmv7" path="res://content/enemies/enemy.tscn" id="1_g4me4"]
 [ext_resource type="Texture2D" uid="uid://c7aerqeiy6xk8" path="res://assets/yellow_enemy.png" id="2_ili15"]
+[ext_resource type="Resource" uid="uid://5f72kyi0ndoc" path="res://gameplay/movement/MoveDiagonalBounce.tres" id="2_o5uxi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ili15"]
 size = Vector2(14, 8)
@@ -32,6 +33,7 @@ animations = [{
 size = Vector2(14, 8)
 
 [node name="YellowEnemy" instance=ExtResource("1_g4me4")]
+movement = ExtResource("2_o5uxi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damageable" index="0"]
 shape = SubResource("RectangleShape2D_ili15")
