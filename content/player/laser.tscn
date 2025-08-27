@@ -7,6 +7,8 @@
 size = Vector2(4, 8)
 
 [node name="Laser" type="Area2D" groups=["player_projectile"]]
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_o4ui2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

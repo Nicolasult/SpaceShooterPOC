@@ -55,6 +55,7 @@ animations = [{
 radius = 6.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 12
 script = ExtResource("1_oq5wi")
 move_speed = 100.0
 weapon_path = NodePath("Weapon")
@@ -67,6 +68,7 @@ sprite_frames = SubResource("SpriteFrames_3ac0f")
 animation = &"center"
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 12
 script = ExtResource("3_gdtqi")
 health = NodePath("../Health")
 

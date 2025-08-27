@@ -11,11 +11,15 @@
 [ext_resource type="Script" uid="uid://wh7idss3t51f" path="res://gameplay/movement/recycle_y.gd" id="9_rfnyo"]
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_ggs1w")
 explosion_scene = ExtResource("2_1wxnl")
 movement = ExtResource("2_12jub")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("3_usgvq")
 health = NodePath("../Health")
 
