@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfa5uexpe5r1f"]
+[gd_scene load_steps=10 format=3 uid="uid://dfa5uexpe5r1f"]
 
 [ext_resource type="PackedScene" uid="uid://cw7mysef2xmv7" path="res://content/enemies/enemy.tscn" id="1_8vojp"]
 [ext_resource type="Texture2D" uid="uid://bxe51sd86br3y" path="res://assets/green_enemy.png" id="2_62sgx"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8vojp"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_51i2g"]
 radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wx8c2"]
+radius = 9.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_51i2g"]
 atlas = ExtResource("2_62sgx")
@@ -40,12 +43,18 @@ radius = 8.0
 
 [node name="GreenEnemy" instance=ExtResource("1_8vojp")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-shape = SubResource("CircleShape2D_8vojp")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damageable" index="0"]
+shape = SubResource("CircleShape2D_51i2g")
 
-[node name="AnimatedSprite2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageDealer" index="0"]
+shape = SubResource("CircleShape2D_wx8c2")
+
+[node name="AnimatedSprite2D" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_00oru")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 shape = SubResource("CircleShape2D_62sgx")
+
+[node name="Stats" parent="." index="5"]
+damage = 30.0

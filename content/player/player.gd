@@ -1,50 +1,95 @@
 extends CharacterBody2D
 
-@export var move_speed: float = 300.0
-@export var weapon_path: NodePath
-@onready var weapon = get_node_or_null(weapon_path)
+@export var move_speed: float = 200.0
+@export var explosion_scene: PackedScene
 
-@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var _anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var _hp: Node = $Health
+@onready var _hitbox: Area2D = $Hitbox
+@onready var _weapon: Node = $Weapon
+@onready var _stats: Stats = $Stats
 
-@export var clamp_to_viewport := true
-var _viewport_rect: Rect2
+var _dead: bool = false
 
-func _ready():
-	if clamp_to_viewport:
-		_viewport_rect = get_viewport().get_visible_rect()
-	if weapon == null and has_node("Weapon"):
-		weapon = $Weapon
+func _ready() -> void:
+	# Connexion à la mort du joueur
+	if _hp and _hp.has_signal("died"):
+		_hp.connect("died", Callable(self, "_on_player_dead"))
 
-func _physics_process(dt):
-	# déplacements
-	var input_vec := Vector2(
-		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
-		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
-	).normalized()
+	# Option : caler la vitesse sur les stats si tu préfères
+	if _stats:
+		move_speed = _stats.move_speed
 
-	velocity = input_vec * move_speed
+	# S'assure que l'anim est au neutre
+	if _anim:
+		_anim.play("center")
+
+func _process(dt: float) -> void:
+	# Tir auto (pas de déclenchement manuel)
+	if not _dead and _weapon and _weapon.has_method("auto_fire"):
+		_weapon.auto_fire(dt)
+
+	# Choix d'animation en fonction de l'input horizontal
+	_update_animation()
+
+func _physics_process(dt: float) -> void:
+	if _dead:
+		return
+
+	# Mouvement basique avec actions standard (ui_left/right/up/down)
+	var input_x: float = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	var input_y: float = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	var dir: Vector2 = Vector2(input_x, input_y)
+	if dir.length_squared() > 1.0:
+		dir = dir.normalized()
+
+	velocity = dir * move_speed
 	move_and_slide()
 
-	# Clamp écran
-	if clamp_to_viewport:
-		global_position.x = clamp(global_position.x, _viewport_rect.position.x + 16.0, _viewport_rect.end.x - 16.0)
-		global_position.y = clamp(global_position.y, _viewport_rect.position.y + 16.0, _viewport_rect.end.y - 16.0)
+	# Clamp dans le viewport (on centre sur le sprite)
+	_clamp_to_viewport()
 
-	# Animation selon l’axe X
-	_update_animation(input_vec.x)
+func _update_animation() -> void:
+	if _anim == null:
+		return
+	var vx: float = velocity.x
+	var threshold: float = 10.0
+	var target: String = "center"
+	if vx < -threshold:
+		target = "steering_left"
+	elif vx > threshold:
+		target = "steering_right"
+	if _anim.animation != target:
+		_anim.play(target)
 
-	# Tir auto → c’est Weapon qui s’occupe du timing
-	if weapon:
-		weapon.auto_fire(dt)
+func _clamp_to_viewport() -> void:
+	var rect: Rect2 = get_viewport().get_visible_rect()
+	# marge pour éviter de coller aux bords si besoin
+	var margin: float = 0.0
+	var pos: Vector2 = global_position
+	pos.x = clamp(pos.x, rect.position.x + margin, rect.end.x - margin)
+	pos.y = clamp(pos.y, rect.position.y + margin, rect.end.y - margin)
+	global_position = pos
 
-func _update_animation(x_axis: float) -> void:
-	var dead_zone := 0.15
-	if abs(x_axis) <= dead_zone:
-		if anim.animation != "center":
-			anim.play("center")
-	elif x_axis < -dead_zone:
-		if anim.animation != "steering_left":
-			anim.play("steering_left")
-	else:
-		if anim.animation != "steering_right":
-			anim.play("steering_right")
+func _on_player_dead() -> void:
+	if _dead:
+		return
+	_dead = true
+
+	# Couper les collisions et le tir
+	if _hitbox:
+		_hitbox.monitoring = false
+		_hitbox.monitorable = false
+	if _weapon:
+		_weapon.set_process(false)
+
+	# Explosion
+	if explosion_scene:
+		var fx: Node = explosion_scene.instantiate()
+		if fx is Node2D:
+			(fx as Node2D).global_position = global_position
+		get_parent().add_child(fx)
+
+	# Masquer puis retirer le joueur
+	visible = false
+	queue_free()
