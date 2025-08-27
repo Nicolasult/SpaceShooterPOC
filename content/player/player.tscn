@@ -79,10 +79,12 @@ script = ExtResource("2_y66qv")
 [node name="Weapon" type="Node" parent="."]
 script = ExtResource("4_3ac0f")
 projectile_scene = ExtResource("5_o23i7")
+stats_path = NodePath("../Stats")
 
 [node name="Stats" type="Node" parent="."]
 script = ExtResource("4_i4jjh")
 damage = 50.0
+fire_rate = 2.0
 
 [node name="ScaleComponent" type="Node" parent="."]
 script = ExtResource("8_rmk25")
