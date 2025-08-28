@@ -57,4 +57,4 @@ autoplay = "default"
 shape = SubResource("CircleShape2D_62sgx")
 
 [node name="Stats" parent="." index="5"]
-damage = 30.0
+base_max_hp = 20.0

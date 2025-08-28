@@ -48,8 +48,5 @@ autoplay = "default"
 [node name="Health" parent="." index="3"]
 max_hp = 200.0
 
-[node name="Stats" parent="." index="4"]
-max_hp = 200.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="8"]
 shape = SubResource("RectangleShape2D_o5uxi")
