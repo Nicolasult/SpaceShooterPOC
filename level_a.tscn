@@ -10,6 +10,8 @@
 
 [node name="LevelA" type="Node2D"]
 
+[node name="SpaceBackground" parent="." instance=ExtResource("7_w3qxq")]
+
 [node name="Spawner" parent="." instance=ExtResource("1_frwqc")]
 waves = Array[ExtResource("2_n6cyk")]([ExtResource("3_va7m1"), ExtResource("4_w3qxq")])
 announce_banner_path = NodePath("../CanvasLayer/WaveBanner")
@@ -31,5 +33,3 @@ offset_bottom = 23.0
 
 [node name="Player" parent="." instance=ExtResource("6_va7m1")]
 position = Vector2(80, 205)
-
-[node name="SpaceBackground" parent="." instance=ExtResource("7_w3qxq")]
