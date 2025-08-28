@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dfa5uexpe5r1f"]
+[gd_scene load_steps=10 format=3 uid="uid://cp7iwiu82u0r3"]
 
-[ext_resource type="PackedScene" uid="uid://cw7mysef2xmv7" path="res://content/enemies/enemy.tscn" id="1_8vojp"]
-[ext_resource type="Texture2D" uid="uid://bxe51sd86br3y" path="res://assets/green_enemy.png" id="2_62sgx"]
+[ext_resource type="PackedScene" uid="uid://cw7mysef2xmv7" path="res://content/enemies/enemy.tscn" id="1_wf8g1"]
+[ext_resource type="Texture2D" uid="uid://bxe51sd86br3y" path="res://assets/green_enemy.png" id="2_7ba5w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_51i2g"]
 radius = 8.0
@@ -10,15 +10,15 @@ radius = 8.0
 radius = 9.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_51i2g"]
-atlas = ExtResource("2_62sgx")
+atlas = ExtResource("2_7ba5w")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wx8c2"]
-atlas = ExtResource("2_62sgx")
+atlas = ExtResource("2_7ba5w")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x7aaq"]
-atlas = ExtResource("2_62sgx")
+atlas = ExtResource("2_7ba5w")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_00oru"]
@@ -41,7 +41,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_62sgx"]
 radius = 8.0
 
-[node name="GreenEnemy" instance=ExtResource("1_8vojp")]
+[node name="TinyGreenEnemy" instance=ExtResource("1_wf8g1")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damageable" index="0"]
 shape = SubResource("CircleShape2D_51i2g")
@@ -55,9 +55,6 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 shape = SubResource("CircleShape2D_62sgx")
-
-[node name="Health" parent="." index="4"]
-max_hp = 20.0
 
 [node name="Stats" parent="." index="5"]
 damage = 30.0

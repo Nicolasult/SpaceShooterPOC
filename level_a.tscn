@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://by3mhndoqjshx"]
+[gd_scene load_steps=7 format=3 uid="uid://by3mhndoqjshx"]
 
 [ext_resource type="PackedScene" uid="uid://bexqof1csimsb" path="res://gameplay/spawning/spawner.tscn" id="1_frwqc"]
 [ext_resource type="Script" uid="uid://dv3wx3aqf8rns" path="res://gameplay/spawning/wave.gd" id="2_n6cyk"]
@@ -6,7 +6,6 @@
 [ext_resource type="Resource" uid="uid://dn52loom37b8e" path="res://gameplay/spawning/wave2.tres" id="4_w3qxq"]
 [ext_resource type="Script" uid="uid://iil5tspmd1jy" path="res://ui/wave_banner.gd" id="5_fcqga"]
 [ext_resource type="PackedScene" uid="uid://dht6gjcl43n1b" path="res://content/player/player.tscn" id="6_va7m1"]
-[ext_resource type="PackedScene" uid="uid://bkrx31anxrl5x" path="res://content/enemies/yellow_enemy.tscn" id="7_w3qxq"]
 
 [node name="LevelA" type="Node2D"]
 
@@ -31,9 +30,3 @@ offset_bottom = 23.0
 
 [node name="Player" parent="." instance=ExtResource("6_va7m1")]
 position = Vector2(80, 205)
-
-[node name="YellowEnemy" parent="." instance=ExtResource("7_w3qxq")]
-position = Vector2(29, 19)
-
-[node name="YellowEnemy2" parent="." instance=ExtResource("7_w3qxq")]
-position = Vector2(112, 11)

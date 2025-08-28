@@ -32,6 +32,7 @@ script = ExtResource("5_m00fi")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("2_def8a")
+stats_path = NodePath("../Stats")
 
 [node name="Stats" type="Node" parent="."]
 script = ExtResource("4_12jub")

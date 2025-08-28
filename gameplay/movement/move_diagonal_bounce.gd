@@ -19,7 +19,7 @@ func _init_start_dir() -> void:
 	else:
 		_dir_x = 1
 
-func velocity(node: Node2D, dt: float) -> Vector2:
+func velocity(node: Node2D, _dt: float) -> Vector2:
 	_init_start_dir()
 
 	# Rebond sur les bords de l'écran
