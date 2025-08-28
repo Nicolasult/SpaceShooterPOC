@@ -1,27 +1,36 @@
-[gd_scene load_steps=6 format=3 uid="uid://28oyom6i4dko"]
+[gd_scene load_steps=5 format=3 uid="uid://2g5gt6cvs7mi"]
 
-[ext_resource type="Script" uid="uid://bnqx0kjquxelp" path="res://content/effects/space_background.gd" id="1_0x3ef"]
-[ext_resource type="Texture2D" uid="uid://bnfke3nljusjm" path="res://assets/space.png" id="1_tui5y"]
-[ext_resource type="Texture2D" uid="uid://cae8jrrtcbd6e" path="res://assets/far_stars.png" id="2_0x3ef"]
-[ext_resource type="Texture2D" uid="uid://tykp0lp3bfg8" path="res://assets/close_stars.png" id="3_vdwuc"]
-[ext_resource type="Script" uid="uid://b0e7lmiv3uyih" path="res://content/effects/close_stars.gd" id="4_vdwuc"]
+[ext_resource type="Script" uid="uid://baf7wtl2pk8es" path="res://content/effects/space_background.gd" id="1_0x3ef"]
+[ext_resource type="Texture2D" uid="uid://bnfke3nljusjm" path="res://assets/space.png" id="1_in7yw"]
+[ext_resource type="Texture2D" uid="uid://cae8jrrtcbd6e" path="res://assets/far_stars.png" id="2_yrrok"]
+[ext_resource type="Texture2D" uid="uid://tykp0lp3bfg8" path="res://assets/close_stars.png" id="3_0h1ho"]
 
 [node name="SpaceBackground" type="ParallaxBackground"]
 script = ExtResource("1_0x3ef")
-base_speed = 40.0
 
-[node name="Space" type="ParallaxLayer" parent="."]
+[node name="SpaceLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 240)
 
-[node name="Sprite2D" type="Sprite2D" parent="Space"]
-texture = ExtResource("1_tui5y")
+[node name="Space" type="TextureRect" parent="SpaceLayer"]
+offset_right = 160.0
+offset_bottom = 240.0
+texture = ExtResource("1_in7yw")
+stretch_mode = 1
 
-[node name="FarStars" type="ParallaxLayer" parent="."]
+[node name="FarStarsLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 240)
 
-[node name="Sprite2D" type="Sprite2D" parent="FarStars"]
-texture = ExtResource("2_0x3ef")
+[node name="FarStars" type="TextureRect" parent="FarStarsLayer"]
+offset_right = 160.0
+offset_bottom = 240.0
+texture = ExtResource("2_yrrok")
+stretch_mode = 1
 
-[node name="CloseStars" type="ParallaxLayer" parent="."]
+[node name="CloseStartsLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(0, 240)
 
-[node name="Sprite2D" type="Sprite2D" parent="CloseStars"]
-texture = ExtResource("3_vdwuc")
-script = ExtResource("4_vdwuc")
+[node name="TextureRect" type="TextureRect" parent="CloseStartsLayer"]
+offset_right = 160.0
+offset_bottom = 240.0
+texture = ExtResource("3_0h1ho")
+stretch_mode = 1
