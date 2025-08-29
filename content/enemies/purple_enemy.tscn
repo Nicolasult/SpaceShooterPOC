@@ -1,0 +1,71 @@
+[gd_scene load_steps=12 format=3 uid="uid://c5g81ilur4ywa"]
+
+[ext_resource type="PackedScene" uid="uid://cw7mysef2xmv7" path="res://content/enemies/enemy.tscn" id="1_2iuco"]
+[ext_resource type="Texture2D" uid="uid://bg2ur8t8sp1y0" path="res://assets/pink_enemy.png" id="2_fpu40"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fpu40"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y822r"]
+radius = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y822r"]
+atlas = ExtResource("2_fpu40")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibdjk"]
+atlas = ExtResource("2_fpu40")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk1qy"]
+atlas = ExtResource("2_fpu40")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1axmy"]
+atlas = ExtResource("2_fpu40")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytfcq"]
+atlas = ExtResource("2_fpu40")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oxv8u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y822r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibdjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk1qy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1axmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytfcq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ibdjk"]
+radius = 6.0
+
+[node name="PurpleEnemy" instance=ExtResource("1_2iuco")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damageable" index="0"]
+shape = SubResource("CircleShape2D_fpu40")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageDealer" index="0"]
+shape = SubResource("CircleShape2D_y822r")
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_oxv8u")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="8"]
+shape = SubResource("CircleShape2D_ibdjk")
