@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Wave" load_steps=4 format=3 uid="uid://chiyl4jexsglg"]
 
 [ext_resource type="Script" uid="uid://c5j446vgmb2bi" path="res://gameplay/spawning/wave_event.gd" id="1_r2gw6"]
-[ext_resource type="Resource" uid="uid://bb560efpasv0k" path="res://gameplay/spawning/wave_event1.tres" id="2_apr7e"]
+[ext_resource type="Resource" uid="uid://bb560efpasv0k" path="res://gameplay/spawning/wave_event_template.tres" id="2_apr7e"]
 [ext_resource type="Script" uid="uid://dv3wx3aqf8rns" path="res://gameplay/spawning/wave.gd" id="2_smpcx"]
 
 [resource]

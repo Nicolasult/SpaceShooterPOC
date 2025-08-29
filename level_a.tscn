@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bexqof1csimsb" path="res://gameplay/spawning/spawner.tscn" id="1_frwqc"]
 [ext_resource type="Script" uid="uid://dv3wx3aqf8rns" path="res://gameplay/spawning/wave.gd" id="2_n6cyk"]
-[ext_resource type="Resource" uid="uid://chiyl4jexsglg" path="res://gameplay/spawning/wave1.tres" id="3_va7m1"]
+[ext_resource type="Resource" uid="uid://dn52loom37b8e" path="res://gameplay/spawning/level_a/wave1/wave1.tres" id="4_va7m1"]
 [ext_resource type="Script" uid="uid://iil5tspmd1jy" path="res://ui/wave_banner.gd" id="5_fcqga"]
-[ext_resource type="Resource" uid="uid://cl5yk450a7tpi" path="res://gameplay/spawning/wave3.tres" id="5_w3qxq"]
+[ext_resource type="Resource" uid="uid://cl5yk450a7tpi" path="res://gameplay/spawning/level_a/wave2/wave2.tres" id="5_w3qxq"]
 [ext_resource type="PackedScene" uid="uid://dht6gjcl43n1b" path="res://content/player/player.tscn" id="6_va7m1"]
 [ext_resource type="PackedScene" uid="uid://2g5gt6cvs7mi" path="res://content/effects/space_background.tscn" id="7_w3qxq"]
 
@@ -13,7 +13,7 @@
 [node name="SpaceBackground" parent="." instance=ExtResource("7_w3qxq")]
 
 [node name="Spawner" parent="." instance=ExtResource("1_frwqc")]
-waves = Array[ExtResource("2_n6cyk")]([ExtResource("3_va7m1"), ExtResource("5_w3qxq")])
+waves = Array[ExtResource("2_n6cyk")]([ExtResource("4_va7m1"), ExtResource("5_w3qxq")])
 announce_banner_path = NodePath("../CanvasLayer/WaveBanner")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -33,3 +33,7 @@ offset_bottom = 23.0
 
 [node name="Player" parent="." instance=ExtResource("6_va7m1")]
 position = Vector2(80, 205)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+visible = false
+position = Vector2(90, 9)
