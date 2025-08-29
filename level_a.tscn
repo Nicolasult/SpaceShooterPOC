@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://by3mhndoqjshx"]
+[gd_scene load_steps=10 format=3 uid="uid://by3mhndoqjshx"]
 
 [ext_resource type="PackedScene" uid="uid://bexqof1csimsb" path="res://gameplay/spawning/spawner.tscn" id="1_frwqc"]
 [ext_resource type="Script" uid="uid://dv3wx3aqf8rns" path="res://gameplay/spawning/wave.gd" id="2_n6cyk"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://cl5yk450a7tpi" path="res://gameplay/spawning/level_a/wave_a2/wave2.tres" id="5_w3qxq"]
 [ext_resource type="Resource" uid="uid://b6l7tyrkp5wen" path="res://gameplay/spawning/level_a/wave_a3/wave3.tres" id="6_fcqga"]
 [ext_resource type="PackedScene" uid="uid://dht6gjcl43n1b" path="res://content/player/player.tscn" id="6_va7m1"]
+[ext_resource type="Resource" uid="uid://l0yycois2ihy" path="res://gameplay/spawning/level_a/wave_a4/wave4.tres" id="7_sx5to"]
 [ext_resource type="PackedScene" uid="uid://2g5gt6cvs7mi" path="res://content/effects/space_background.tscn" id="7_w3qxq"]
 
 [node name="LevelA" type="Node2D"]
@@ -14,7 +15,7 @@
 [node name="SpaceBackground" parent="." instance=ExtResource("7_w3qxq")]
 
 [node name="Spawner" parent="." instance=ExtResource("1_frwqc")]
-waves = Array[ExtResource("2_n6cyk")]([ExtResource("4_va7m1"), ExtResource("5_w3qxq"), ExtResource("6_fcqga")])
+waves = Array[ExtResource("2_n6cyk")]([ExtResource("7_sx5to"), ExtResource("4_va7m1"), ExtResource("5_w3qxq"), ExtResource("6_fcqga")])
 announce_banner_path = NodePath("../CanvasLayer/WaveBanner")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
