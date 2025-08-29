@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://bptum0elqakp7"]
+
+[ext_resource type="Texture2D" uid="uid://bsglxn801grn3" path="res://assets/animated_items_outline.png" id="1_jdyoj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tlcy"]
+atlas = ExtResource("1_jdyoj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4som"]
+atlas = ExtResource("1_jdyoj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awhtv"]
+atlas = ExtResource("1_jdyoj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kql8w"]
+atlas = ExtResource("1_jdyoj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qavyl"]
+atlas = ExtResource("1_jdyoj")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_804m4"]
+atlas = ExtResource("1_jdyoj")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qog44"]
+atlas = ExtResource("1_jdyoj")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3jk7"]
+atlas = ExtResource("1_jdyoj")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uqaoh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tlcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4som")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awhtv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kql8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qavyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_804m4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qog44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3jk7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jdyoj"]
+radius = 11.0454
+
+[node name="Money" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_uqaoh")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_jdyoj")

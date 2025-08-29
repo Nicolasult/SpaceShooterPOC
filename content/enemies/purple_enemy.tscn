@@ -67,5 +67,9 @@ shape = SubResource("CircleShape2D_y822r")
 sprite_frames = SubResource("SpriteFrames_oxv8u")
 autoplay = "default"
 
+[node name="Stats" parent="." index="4"]
+base_max_hp = 200.0
+damage = 20.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="8"]
 shape = SubResource("CircleShape2D_ibdjk")
