@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Wave" load_steps=12 format=3 uid="uid://b6l7tyrkp5wen"]
+
+[ext_resource type="Script" uid="uid://c5j446vgmb2bi" path="res://gameplay/spawning/wave_event.gd" id="1_4u6x1"]
+[ext_resource type="Resource" uid="uid://dkvjftrm4ocm5" path="res://gameplay/spawning/level_a/wave_a3/wave_event_a31.tres" id="2_pglww"]
+[ext_resource type="Resource" uid="uid://6mt5lmen15tc" path="res://gameplay/spawning/level_a/wave_a3/wave_event_a32.tres" id="3_8mm23"]
+[ext_resource type="Resource" uid="uid://jvyv3u0tygtn" path="res://gameplay/spawning/level_a/wave_a3/wave_event_a33.tres" id="4_nbmxk"]
+[ext_resource type="Resource" uid="uid://bbunu3ok4l4hs" path="res://gameplay/spawning/level_a/wave_a3/wave_event_a34.tres" id="5_nrm6p"]
+[ext_resource type="Resource" uid="uid://dlolqqsyd8aw0" path="res://gameplay/spawning/level_a/wave_a3/wave_event_a35.tres" id="6_6dj4x"]
+[ext_resource type="Resource" uid="uid://q2f3e6xa755c" path="res://gameplay/spawning/level_a/wave_a3/wave_event_a36.tres" id="7_u2udq"]
+[ext_resource type="Resource" uid="uid://dea1je1pydi6e" path="res://gameplay/spawning/level_a/wave_a3/wave_event_a37.tres" id="8_kp7x5"]
+[ext_resource type="Resource" uid="uid://brhbwcxu64ox7" path="res://gameplay/spawning/level_a/wave_a3/wave_event_a38.tres" id="9_6135u"]
+[ext_resource type="Resource" uid="uid://bq8e3vgn1p0rx" path="res://gameplay/spawning/level_a/wave_a3/wave_event_a39.tres" id="10_84icn"]
+[ext_resource type="Script" uid="uid://dv3wx3aqf8rns" path="res://gameplay/spawning/wave.gd" id="11_vaupa"]
+
+[resource]
+script = ExtResource("11_vaupa")
+name = "Wave"
+events = Array[ExtResource("1_4u6x1")]([ExtResource("2_pglww"), ExtResource("3_8mm23"), ExtResource("4_nbmxk"), ExtResource("5_nrm6p"), ExtResource("6_6dj4x"), ExtResource("7_u2udq"), ExtResource("8_kp7x5"), ExtResource("9_6135u"), ExtResource("10_84icn")])
+metadata/_custom_type_script = "uid://dv3wx3aqf8rns"

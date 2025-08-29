@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="WaveEvent" load_steps=4 format=3 uid="uid://q2f3e6xa755c"]
+
+[ext_resource type="PackedScene" uid="uid://dfa5uexpe5r1f" path="res://content/enemies/green_enemy.tscn" id="1_f4lc5"]
+[ext_resource type="Resource" uid="uid://bdfykkxl2wehv" path="res://gameplay/movement/MoveStraight.tres" id="2_13cey"]
+[ext_resource type="Script" uid="uid://c5j446vgmb2bi" path="res://gameplay/spawning/wave_event.gd" id="3_x8tkw"]
+
+[resource]
+script = ExtResource("3_x8tkw")
+t = 2.5
+enemy_scene = ExtResource("1_f4lc5")
+count = 2
+spawn_every = 0.5
+start_y = -32.0
+x_mode = &"fixed"
+x_range = Vector2(40, 160)
+x_fixed = 75.0
+movement = ExtResource("2_13cey")
+movement_overrides = {}
+mirror = false
+metadata/_custom_type_script = "uid://c5j446vgmb2bi"
