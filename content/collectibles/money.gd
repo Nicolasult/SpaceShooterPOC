@@ -9,8 +9,13 @@ class_name MoneyPickup
 var _t: float = 0.0
 
 func _ready() -> void:
+	# évite de changer l’état physique pendant le flush
+	monitoring = false
+	set_deferred("monitoring", true)
+
 	if not is_connected("area_entered", Callable(self, "_on_area_entered")):
 		connect("area_entered", Callable(self, "_on_area_entered"))
+
 	if _anim and _anim.sprite_frames:
 		_anim.play()
 
