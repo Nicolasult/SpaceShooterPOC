@@ -46,6 +46,9 @@ radius = 8.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damageable" index="0"]
 shape = SubResource("CircleShape2D_51i2g")
 
+[node name="DamageDealer" parent="." index="1"]
+amount = 20.0
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageDealer" index="0"]
 shape = SubResource("CircleShape2D_wx8c2")
 

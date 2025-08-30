@@ -38,6 +38,9 @@ movement = ExtResource("2_o5uxi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damageable" index="0"]
 shape = SubResource("RectangleShape2D_ili15")
 
+[node name="DamageDealer" parent="." index="1"]
+amount = 20.0
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DamageDealer" index="0"]
 polygon = PackedVector2Array(-7, -4, 7, -4, 7, 3, 3, 4, 3, 5, -3, 5, -3, 4, -7, 3)
 
