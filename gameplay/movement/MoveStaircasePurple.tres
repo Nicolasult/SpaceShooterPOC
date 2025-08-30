@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MoveStaircase" load_steps=2 format=3 uid="uid://blbl1keymvhid"]
+
+[ext_resource type="Script" uid="uid://dq2dmnuxoxwu8" path="res://gameplay/movement/move_staricase.gd" id="1_1dlnt"]
+
+[resource]
+script = ExtResource("1_1dlnt")
+down_speed = 60.0
+side_speed = 40.0
+vertical_time = 1.0
+horizontal_time = 2.0
+margin = 8.0
+randomize_start_dir = true
+metadata/_custom_type_script = "uid://dq2dmnuxoxwu8"

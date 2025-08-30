@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://c5g81ilur4ywa"]
+[gd_scene load_steps=13 format=3 uid="uid://c5g81ilur4ywa"]
 
 [ext_resource type="PackedScene" uid="uid://cw7mysef2xmv7" path="res://content/enemies/enemy.tscn" id="1_2iuco"]
 [ext_resource type="Texture2D" uid="uid://bg2ur8t8sp1y0" path="res://assets/pink_enemy.png" id="2_fpu40"]
+[ext_resource type="Resource" uid="uid://blbl1keymvhid" path="res://gameplay/movement/MoveStaircasePurple.tres" id="2_y822r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fpu40"]
 radius = 6.0
@@ -56,6 +57,7 @@ animations = [{
 radius = 6.0
 
 [node name="PurpleEnemy" instance=ExtResource("1_2iuco")]
+movement = ExtResource("2_y822r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damageable" index="0"]
 shape = SubResource("CircleShape2D_fpu40")
