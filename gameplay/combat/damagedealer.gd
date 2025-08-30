@@ -40,11 +40,11 @@ func _kill_self() -> void:
 	if health_node_path != NodePath():
 		hp = get_node_or_null(health_node_path)
 
-	if hp and hp.has_method("apply") and hp.has_method("max_hp"):
-		# Inflige le reste des PV pour déclencher "died"
-		hp.apply(hp.max_hp)
+	if hp and hp.has_method("apply"):
+		# GROS dégât pour forcer la mort -> Health.emit_signal("died")
+		hp.apply(1e9)
 	else:
-		# Fallback : destruction directe du parent
+		# Fallback si pas de Health trouvé : destruction directe
 		var root: Node = get_parent()
 		if root:
 			root.call_deferred("queue_free")
