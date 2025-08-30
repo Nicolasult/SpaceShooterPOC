@@ -45,6 +45,10 @@ radius = 4.0
 [node name="EnemySineProjectile" type="Area2D"]
 collision_layer = 8
 script = ExtResource("1_ryctp")
+speed_down = 60.0
+amplitude_px = 12.0
+frequency_hz = 1.5
+lifetime = 12.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_77qox")

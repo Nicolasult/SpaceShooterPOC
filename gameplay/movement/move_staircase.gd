@@ -15,6 +15,11 @@ var _t: float = 0.0
 var _dir_x: int = 1
 var _inited: bool = false
 
+signal phase_changed(new_phase: int)
+
+func is_side_phase() -> bool:
+	return _phase == Phase.SIDE
+
 func _init_once() -> void:
 	if _inited: return
 	_inited = true

@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5g81ilur4ywa"]
+[gd_scene load_steps=15 format=3 uid="uid://c5g81ilur4ywa"]
 
 [ext_resource type="PackedScene" uid="uid://cw7mysef2xmv7" path="res://content/enemies/enemy.tscn" id="1_2iuco"]
 [ext_resource type="Texture2D" uid="uid://bg2ur8t8sp1y0" path="res://assets/pink_enemy.png" id="2_fpu40"]
 [ext_resource type="Resource" uid="uid://blbl1keymvhid" path="res://gameplay/movement/MoveStaircasePurple.tres" id="2_y822r"]
+[ext_resource type="Script" uid="uid://crffxe3nwxpy6" path="res://gameplay/combat/enemy_shooter.gd" id="4_sk1qy"]
+[ext_resource type="PackedScene" uid="uid://xshpdrppab3q" path="res://content/projectiles/enemy_sine_projectile.tscn" id="5_1axmy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fpu40"]
 radius = 6.0
@@ -75,3 +77,10 @@ damage = 20.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="8"]
 shape = SubResource("CircleShape2D_ibdjk")
+
+[node name="EnemyShooter" type="Node" parent="." index="9"]
+script = ExtResource("4_sk1qy")
+projectile_scene = ExtResource("5_1axmy")
+muzzle_offset = Vector2(0, 6)
+cooldown = 2.0
+damage_override = 20.0
