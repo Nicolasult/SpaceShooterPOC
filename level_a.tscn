@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://by3mhndoqjshx"]
+[gd_scene load_steps=13 format=3 uid="uid://by3mhndoqjshx"]
 
+[ext_resource type="Script" uid="uid://c8yrmck8mr0kj" path="res://level_a.gd" id="1_cok7h"]
 [ext_resource type="PackedScene" uid="uid://bexqof1csimsb" path="res://gameplay/spawning/spawner.tscn" id="1_frwqc"]
 [ext_resource type="Script" uid="uid://dv3wx3aqf8rns" path="res://gameplay/spawning/wave.gd" id="2_n6cyk"]
 [ext_resource type="Resource" uid="uid://dn52loom37b8e" path="res://gameplay/spawning/level_a/wave_a1/wave1.tres" id="4_va7m1"]
@@ -13,8 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://qkqmthai0gcw" path="res://content/ui/hud_health.tscn" id="11_np7es"]
 
 [node name="LevelA" type="Node2D"]
+script = ExtResource("1_cok7h")
 
 [node name="HUDHealth" parent="." instance=ExtResource("11_np7es")]
+visible = false
 
 [node name="SpaceBackground" parent="." instance=ExtResource("7_w3qxq")]
 
@@ -42,3 +45,4 @@ position = Vector2(80, 205)
 
 [node name="PurpleEnemy" parent="." instance=ExtResource("10_f0rif")]
 position = Vector2(77, 26)
+coin_scene = null

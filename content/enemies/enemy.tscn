@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cw7mysef2xmv7"]
+[gd_scene load_steps=12 format=3 uid="uid://cw7mysef2xmv7"]
 
 [ext_resource type="Script" uid="uid://dfcd3ke6rembe" path="res://content/enemies/enemy.gd" id="1_ggs1w"]
 [ext_resource type="PackedScene" uid="uid://c46m21ovolokf" path="res://content/effects/explosion.tscn" id="2_1wxnl"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cw3ik2hgi14rl" path="res://gameplay/combat/health.gd" id="2_def8a"]
 [ext_resource type="Script" uid="uid://dyqq32q5pt06y" path="res://gameplay/combat/damageable.gd" id="3_usgvq"]
 [ext_resource type="Script" uid="uid://lt4wwx56ce3x" path="res://gameplay/combat/stats.gd" id="4_12jub"]
+[ext_resource type="PackedScene" uid="uid://bptum0elqakp7" path="res://content/collectibles/money.tscn" id="4_pdesj"]
 [ext_resource type="Script" uid="uid://c70byhn0vmj56" path="res://gameplay/combat/damagedealer.gd" id="5_m00fi"]
 [ext_resource type="Script" uid="uid://bm4fadgab7o8f" path="res://gameplay/visual/scale_component.gd" id="6_btayh"]
 [ext_resource type="Script" uid="uid://cxtc1sqvwjas7" path="res://gameplay/visual/flash_component.gd" id="7_1wxnl"]
@@ -17,6 +18,7 @@ collision_mask = 3
 script = ExtResource("1_ggs1w")
 explosion_scene = ExtResource("2_1wxnl")
 movement = ExtResource("2_12jub")
+coin_scene = ExtResource("4_pdesj")
 
 [node name="Damageable" type="Area2D" parent="."]
 collision_layer = 4

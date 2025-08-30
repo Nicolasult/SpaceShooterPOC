@@ -1,42 +1,49 @@
-[gd_scene load_steps=12 format=3 uid="uid://bptum0elqakp7"]
+[gd_scene load_steps=13 format=3 uid="uid://bptum0elqakp7"]
 
+[ext_resource type="Script" uid="uid://dmoj031leyhm0" path="res://content/collectibles/money.gd" id="1_4tlcy"]
 [ext_resource type="Texture2D" uid="uid://bsglxn801grn3" path="res://assets/animated_items_outline.png" id="1_jdyoj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4tlcy"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_jdyoj"]
+radius = 12.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdyoj"]
 atlas = ExtResource("1_jdyoj")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m4som"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tlcy"]
 atlas = ExtResource("1_jdyoj")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_awhtv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4som"]
 atlas = ExtResource("1_jdyoj")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kql8w"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_awhtv"]
 atlas = ExtResource("1_jdyoj")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qavyl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kql8w"]
 atlas = ExtResource("1_jdyoj")
 region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_804m4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qavyl"]
 atlas = ExtResource("1_jdyoj")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qog44"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_804m4"]
 atlas = ExtResource("1_jdyoj")
 region = Rect2(192, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v3jk7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qog44"]
 atlas = ExtResource("1_jdyoj")
 region = Rect2(224, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_uqaoh"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_v3jk7"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdyoj")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4tlcy")
 }, {
@@ -57,23 +64,22 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qog44")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v3jk7")
 }],
 "loop": true,
 "name": &"default",
 "speed": 8.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jdyoj"]
-radius = 11.0454
+[node name="Money" type="Area2D"]
+scale = Vector2(0.4, 0.4)
+collision_layer = 16
+script = ExtResource("1_4tlcy")
+speed_down = 60.0
+lifetime = 12.0
 
-[node name="Money" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_uqaoh")
-autoplay = "default"
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jdyoj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v3jk7")
+autoplay = "default"

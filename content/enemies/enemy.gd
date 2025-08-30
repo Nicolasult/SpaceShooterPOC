@@ -3,6 +3,10 @@ extends CharacterBody2D
 @export var explosion_scene: PackedScene
 @export var movement: Movement
 
+@export_range(0.0, 1.0, 0.01) var coin_drop_chance: float = 0.25
+@export var coin_scene: PackedScene
+@export var coin_value: int = 1
+
 @onready var hp: Node = $Health
 
 func _ready():
@@ -21,4 +25,13 @@ func _on_dead():
 		var fx = explosion_scene.instantiate()
 		fx.global_position = global_position
 		get_tree().current_scene.add_child(fx)
+		
+	if coin_scene and randf() < coin_drop_chance:
+		var coin := coin_scene.instantiate() as Node2D
+		if coin:
+			coin.global_position = global_position
+			if coin.has_method("set_value"):
+				coin.call("set_value", coin_value)
+			get_tree().current_scene.add_child(coin)
+				
 	queue_free()

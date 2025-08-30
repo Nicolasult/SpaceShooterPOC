@@ -12,13 +12,16 @@ position = Vector2(81, 228)
 position = Vector2(35, 24)
 collision_layer = 1
 collision_mask = 1
+coin_scene = null
 
 [node name="GreenEnemy2" parent="." instance=ExtResource("1_gojnm")]
 position = Vector2(81, 20)
 collision_layer = 1
 collision_mask = 1
+coin_scene = null
 
 [node name="GreenEnemy3" parent="." instance=ExtResource("1_gojnm")]
 position = Vector2(121, 21)
 collision_layer = 1
 collision_mask = 1
+coin_scene = null

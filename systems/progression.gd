@@ -1,6 +1,7 @@
 extends Node
 
 signal difficulty_changed(new_difficulty: String)
+signal coins_changed(run: int, total: int)
 
 var _save_path: String = "user://save.json"
 
@@ -8,8 +9,12 @@ var difficulty: String = "Normal"
 var unlocked_level: int = 1
 var best_times: Dictionary = {}    # ex: {"L1:Normal": 32.5}
 
+var coins_run: int = 0      # gagné depuis le début du niveau courant
+var coins_total: int = 0 
+
 func _ready() -> void:
 	load_save()
+	randomize()
 
 func get_difficulty() -> String:
 	return difficulty
@@ -58,3 +63,14 @@ func load_save() -> void:
 			difficulty = str(res.get("difficulty", "Normal"))
 			unlocked_level = int(res.get("unlocked_level", 1))
 			best_times = res.get("best_times", {})
+
+func reset_run_coins() -> void:
+	coins_run = 0
+	emit_signal("coins_changed", coins_run, coins_total)
+
+func add_coins(v: int) -> void:
+	if v <= 0:
+		return
+	coins_run += v
+	coins_total += v
+	emit_signal("coins_changed", coins_run, coins_total)
