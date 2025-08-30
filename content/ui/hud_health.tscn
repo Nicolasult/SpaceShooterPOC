@@ -11,6 +11,7 @@ corner_radius_bottom_left = 6
 
 [node name="HUDHealth" type="CanvasLayer"]
 script = ExtResource("1_mt85i")
+hide_on_death = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 1
@@ -19,6 +20,8 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
 
 [node name="Panel" type="Panel" parent="MarginContainer"]
 layout_mode = 2
@@ -30,10 +33,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HP" type="Label" parent="MarginContainer/Panel/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "HP"
 
 [node name="Bar" type="ProgressBar" parent="MarginContainer/Panel/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 rounded = true
 show_percentage = false
