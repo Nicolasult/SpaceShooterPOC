@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://ceqn8y5wfrq04"]
+
+[ext_resource type="Texture2D" uid="uid://bsglxn801grn3" path="res://assets/animated_items_outline.png" id="1_moqrc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64tp1"]
+atlas = ExtResource("1_moqrc")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbhga"]
+atlas = ExtResource("1_moqrc")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmbnd"]
+atlas = ExtResource("1_moqrc")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0fih"]
+atlas = ExtResource("1_moqrc")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eukws"]
+atlas = ExtResource("1_moqrc")
+region = Rect2(128, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcyxg"]
+atlas = ExtResource("1_moqrc")
+region = Rect2(160, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4nvg"]
+atlas = ExtResource("1_moqrc")
+region = Rect2(192, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv68o"]
+atlas = ExtResource("1_moqrc")
+region = Rect2(224, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pu68u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64tp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbhga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmbnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0fih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eukws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcyxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4nvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv68o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Emerald" type="Area2D"]
+collision_layer = 16
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pu68u")
+autoplay = "default"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-3, -11, -11, -3, -11, 2, -3, 11, 3, 11, 11, 3, 11, -3, 3, -11)
