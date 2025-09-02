@@ -6,7 +6,7 @@ extends Control
 
 func _ready() -> void:
 	_build()
-	$VBox/BtnBack.pressed.connect(func(): get_tree().change_scene_to_file("res://ui/MainMenu.tscn"))
+	$VBox/BtnBack.pressed.connect(func(): get_tree().change_scene_to_file("res://content/ui/main_menu.tscn"))
 
 func _build() -> void:
 	for c in _box.get_children():
