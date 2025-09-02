@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://csp7hr8hyrpbr"]
+
+[ext_resource type="Script" uid="uid://dlxa8qpnbtimc" path="res://content/levels/level_end_overlay.gd" id="1_eoc6g"]
+
+[node name="LevelEndOverlay" type="CanvasLayer"]
+script = ExtResource("1_eoc6g")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Root"]
+custom_minimum_size = Vector2(360, 120)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Vbox" type="VBoxContainer" parent="Root/Panel"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Msg" type="Label" parent="Root/Panel/Vbox"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "Congratulations! You completed the level"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Sub" type="Label" parent="Root/Panel/Vbox"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "Returning to Level Selection..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
