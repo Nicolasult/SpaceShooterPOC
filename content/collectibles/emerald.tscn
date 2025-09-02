@@ -74,4 +74,4 @@ sprite_frames = SubResource("SpriteFrames_pu68u")
 autoplay = "default"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-3, -11, -11, -3, -11, 2, -3, 11, 3, 11, 11, 3, 11, -3, 3, -11)
+polygon = PackedVector2Array(-3, -11, -11, -3, -11, 3, -3, 11, 3, 11, 11, 3, 11, -3, 3, -11)

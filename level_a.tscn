@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://by3mhndoqjshx"]
+[gd_scene load_steps=12 format=3 uid="uid://by3mhndoqjshx"]
 
 [ext_resource type="Script" uid="uid://c8yrmck8mr0kj" path="res://level_a.gd" id="1_cok7h"]
 [ext_resource type="PackedScene" uid="uid://bexqof1csimsb" path="res://gameplay/spawning/spawner.tscn" id="1_frwqc"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://dht6gjcl43n1b" path="res://content/player/player.tscn" id="6_va7m1"]
 [ext_resource type="Resource" uid="uid://l0yycois2ihy" path="res://gameplay/spawning/level_a/wave_a4/wave4.tres" id="7_sx5to"]
 [ext_resource type="PackedScene" uid="uid://2g5gt6cvs7mi" path="res://content/effects/space_background.tscn" id="7_w3qxq"]
-[ext_resource type="PackedScene" uid="uid://c5g81ilur4ywa" path="res://content/enemies/purple_enemy.tscn" id="10_f0rif"]
 [ext_resource type="PackedScene" uid="uid://qkqmthai0gcw" path="res://content/ui/hud_health.tscn" id="11_np7es"]
 
 [node name="LevelA" type="Node2D"]
@@ -42,7 +41,3 @@ offset_bottom = 23.0
 
 [node name="Player" parent="." instance=ExtResource("6_va7m1")]
 position = Vector2(80, 205)
-
-[node name="PurpleEnemy" parent="." instance=ExtResource("10_f0rif")]
-position = Vector2(77, 26)
-coin_scene = null
