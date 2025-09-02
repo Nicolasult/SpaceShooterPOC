@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://h2ipqafgkhyb"]
+
+[ext_resource type="Script" uid="uid://8g8fl22nik8o" path="res://content/ui/main_menu.gd" id="1_myo1n"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_myo1n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "SPACE SHOOTER"
+
+[node name="Levels" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
