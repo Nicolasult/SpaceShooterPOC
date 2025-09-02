@@ -4,6 +4,8 @@
 
 [node name="LevelEndOverlay" type="CanvasLayer"]
 script = ExtResource("1_eoc6g")
+msg_label_path = NodePath("Root/Panel/Vbox/Msg")
+sub_label_path = NodePath("Root/Panel/Vbox/Sub")
 
 [node name="Root" type="Control" parent="."]
 layout_mode = 3
@@ -44,7 +46,7 @@ autowrap_mode = 2
 [node name="Sub" type="Label" parent="Root/Panel/Vbox"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-text = "Returning to Level Selection..."
+text = "Returning to the level selection..."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
