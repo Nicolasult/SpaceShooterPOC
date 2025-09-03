@@ -30,12 +30,3 @@ func _ready() -> void:
 func show_message(text: String, sub: String = "") -> void:
 	visible = true
 	if _msg: _msg.text = text
-	if _sub: _sub.text = sub
-
-	# Effet de fondu sur le Control (CanvasLayer n'a pas "modulate")
-	if _root:
-		_root.modulate.a = 0.0
-		create_tween().tween_property(_root, "modulate:a", 1.0, 0.25)
-
-func hide_now() -> void:
-	visible = false

@@ -1,0 +1,43 @@
+[gd_scene load_steps=10 format=3 uid="uid://dbolddunck43a"]
+
+[ext_resource type="Script" uid="uid://c8yrmck8mr0kj" path="res://level_a.gd" id="1_qa62b"]
+[ext_resource type="PackedScene" uid="uid://qkqmthai0gcw" path="res://content/ui/hud_health.tscn" id="2_wk58m"]
+[ext_resource type="PackedScene" uid="uid://2g5gt6cvs7mi" path="res://content/effects/space_background.tscn" id="3_rtw2i"]
+[ext_resource type="PackedScene" uid="uid://bexqof1csimsb" path="res://gameplay/spawning/spawner.tscn" id="4_fp5l4"]
+[ext_resource type="Script" uid="uid://dv3wx3aqf8rns" path="res://gameplay/spawning/wave.gd" id="5_aiace"]
+[ext_resource type="Resource" uid="uid://dn52loom37b8e" path="res://gameplay/spawning/level_a/wave_a1/wave1.tres" id="6_uskv3"]
+[ext_resource type="Script" uid="uid://iil5tspmd1jy" path="res://ui/wave_banner.gd" id="7_jme67"]
+[ext_resource type="PackedScene" uid="uid://dht6gjcl43n1b" path="res://content/player/player.tscn" id="8_md0re"]
+[ext_resource type="PackedScene" uid="uid://csp7hr8hyrpbr" path="res://content/levels/level_end_overlay.tscn" id="9_608ru"]
+
+[node name="LevelA" type="Node2D"]
+script = ExtResource("1_qa62b")
+
+[node name="HUDHealth" parent="." instance=ExtResource("2_wk58m")]
+visible = false
+
+[node name="SpaceBackground" parent="." instance=ExtResource("3_rtw2i")]
+
+[node name="Spawner" parent="." instance=ExtResource("4_fp5l4")]
+waves = Array[ExtResource("5_aiace")]([ExtResource("6_uskv3")])
+announce_banner_path = NodePath("../CanvasLayer/WaveBanner")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WaveBanner" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_jme67")
+label_path = NodePath("Label")
+
+[node name="Label" type="Label" parent="CanvasLayer/WaveBanner"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Player" parent="." instance=ExtResource("8_md0re")]
+position = Vector2(80, 205)
+
+[node name="LevelEndOverlay" parent="." instance=ExtResource("9_608ru")]

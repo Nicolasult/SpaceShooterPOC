@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvg45p27ro6ua"]
+[gd_scene load_steps=7 format=3 uid="uid://dvg45p27ro6ua"]
 
 [ext_resource type="Script" uid="uid://cg0g3yfw17nl7" path="res://content/ui/levels_menu.gd" id="1_0mlj3"]
 [ext_resource type="Script" uid="uid://bx2a55eka3v4o" path="res://content/ui/level_info.gd" id="2_wi266"]
 [ext_resource type="Resource" uid="uid://cxnrgvnukjpv8" path="res://content/ui/LevelAInfo.tres" id="3_tn5i1"]
+[ext_resource type="Resource" uid="uid://ci8nwht37cm63" path="res://content/ui/LevelBInfo.tres" id="4_gcsjl"]
 [ext_resource type="PackedScene" uid="uid://2g5gt6cvs7mi" path="res://content/effects/space_background.tscn" id="4_tn5i1"]
+[ext_resource type="Resource" uid="uid://yb2bpm5pyyo4" path="res://content/ui/LevelCInfo.tres" id="5_ry88m"]
 
 [node name="LevelsMenu" type="Control"]
 layout_mode = 3
@@ -11,7 +13,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_0mlj3")
-levels = Array[ExtResource("2_wi266")]([ExtResource("3_tn5i1")])
+levels = Array[ExtResource("2_wi266")]([ExtResource("3_tn5i1"), ExtResource("4_gcsjl"), ExtResource("5_ry88m")])
 
 [node name="SpaceBackground" parent="." instance=ExtResource("4_tn5i1")]
 
