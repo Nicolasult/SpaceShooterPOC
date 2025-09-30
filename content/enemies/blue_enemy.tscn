@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1o4sbxoqnpn8"]
+
+[ext_resource type="PackedScene" uid="uid://cw7mysef2xmv7" path="res://content/enemies/enemy.tscn" id="1_urhrc"]
+[ext_resource type="Texture2D" uid="uid://cs7gy2hfk643j" path="res://assets/blue_enemy.png" id="2_i2c7b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i2c7b"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8uf2d"]
+radius = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uf2d"]
+atlas = ExtResource("2_i2c7b")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxcqg"]
+atlas = ExtResource("2_i2c7b")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gs726"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8uf2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxcqg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="BlueEnemy" instance=ExtResource("1_urhrc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damageable" index="0"]
+shape = SubResource("CircleShape2D_i2c7b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageDealer" index="0"]
+shape = SubResource("CircleShape2D_8uf2d")
+
+[node name="AnimatedSprite2D" parent="." index="2"]
+sprite_frames = SubResource("SpriteFrames_gs726")
+autoplay = "default"
+frame_progress = 0.516344
+
+[node name="Health" parent="." index="3"]
+max_hp = 50.0
+
+[node name="Stats" parent="." index="4"]
+base_max_hp = 50.0

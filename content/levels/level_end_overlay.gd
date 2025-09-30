@@ -17,7 +17,7 @@ func _ready() -> void:
 
 	# Fallbacks si les chemins ne matchent pas: on essaie de trouver les 2 premiers Label sous Root
 	if _root and (_msg == null or _sub == null):
-		var labels := _root.get_tree().get_nodes_in_group(&"") # pas utile ici; on parcourt simplement:
+		var _labels := _root.get_tree().get_nodes_in_group(&"") # pas utile ici; on parcourt simplement:
 		var found: Array[Label] = []
 		for n in _root.get_children(true):
 			if n is Label:
@@ -27,6 +27,6 @@ func _ready() -> void:
 
 	visible = false  # caché au départ
 
-func show_message(text: String, sub: String = "") -> void:
+func show_message(text: String, _sub: String = "") -> void:
 	visible = true
 	if _msg: _msg.text = text
