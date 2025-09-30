@@ -12,6 +12,8 @@ extends CharacterBody2D
 var _dead: bool = false
 
 func _ready() -> void:
+	add_to_group("player")
+	
 	# Connexion à la mort du joueur
 	if _hp and _hp.has_signal("died"):
 		_hp.connect("died", Callable(self, "_on_player_dead"))

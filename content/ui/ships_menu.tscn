@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu2ekjtgesvxp"]
+[gd_scene load_steps=6 format=3 uid="uid://bu2ekjtgesvxp"]
 
-[ext_resource type="Script" uid="uid://rahu1l75xel3" path="res://ui/ships_menu.gd" id="1_beovi"]
+[ext_resource type="Script" uid="uid://rahu1l75xel3" path="res://content/ui/ships_menu.gd" id="1_beovi"]
 [ext_resource type="Script" uid="uid://cd5nqxu4812v8" path="res://content/ships/ship_info.gd" id="2_2lccp"]
 [ext_resource type="Resource" uid="uid://dxrg56wmft2e0" path="res://content/ships/starter.tres" id="3_w513t"]
 [ext_resource type="Resource" uid="uid://dedd3uwfnf5sv" path="res://content/ships/falcon.tres" id="4_74a34"]
+[ext_resource type="PackedScene" uid="uid://2g5gt6cvs7mi" path="res://content/effects/space_background.tscn" id="5_gfyep"]
 
 [node name="ShipsMenu" type="Control"]
 layout_mode = 3
@@ -14,6 +15,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_beovi")
 ships = Array[ExtResource("2_2lccp")]([ExtResource("3_w513t"), ExtResource("4_74a34")])
+
+[node name="SpaceBackground" parent="." instance=ExtResource("5_gfyep")]
 
 [node name="VBox" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -31,3 +34,4 @@ layout_mode = 2
 
 [node name="BtnBack" type="Button" parent="VBox"]
 layout_mode = 2
+text = "Back"
