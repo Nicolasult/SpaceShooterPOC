@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="ShipInfo" load_steps=2 format=3 uid="uid://dedd3uwfnf5sv"]
+[gd_resource type="Resource" script_class="ShipInfo" load_steps=3 format=3 uid="uid://dedd3uwfnf5sv"]
 
 [ext_resource type="Script" uid="uid://cd5nqxu4812v8" path="res://content/ships/ship_info.gd" id="1_leo2u"]
+[ext_resource type="PackedScene" uid="uid://bgnlgf7dmp8m0" path="res://content/player/falcon.tscn" id="1_ri6xf"]
 
 [resource]
 script = ExtResource("1_leo2u")
 id = &"falcon"
 title = ""
+scene = ExtResource("1_ri6xf")
 cost = 10
 description = ""
 metadata/_custom_type_script = "uid://cd5nqxu4812v8"

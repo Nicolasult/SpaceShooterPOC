@@ -118,7 +118,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_y66qv"]
 radius = 6.0
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Falcon" type="CharacterBody2D" groups=["player"]]
 collision_mask = 12
 script = ExtResource("1_ld3eq")
 move_speed = 100.0
