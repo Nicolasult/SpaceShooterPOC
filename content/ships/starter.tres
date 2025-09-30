@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ShipInfo" load_steps=3 format=3 uid="uid://dxrg56wmft2e0"]
+
+[ext_resource type="Script" uid="uid://cd5nqxu4812v8" path="res://content/ships/ship_info.gd" id="1_r606h"]
+[ext_resource type="PackedScene" uid="uid://dht6gjcl43n1b" path="res://content/player/player.tscn" id="1_yrn15"]
+
+[resource]
+script = ExtResource("1_r606h")
+id = &"starter"
+title = ""
+scene = ExtResource("1_yrn15")
+cost = 0
+description = ""
+metadata/_custom_type_script = "uid://cd5nqxu4812v8"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ShipInfo" load_steps=2 format=3 uid="uid://dedd3uwfnf5sv"]
+
+[ext_resource type="Script" uid="uid://cd5nqxu4812v8" path="res://content/ships/ship_info.gd" id="1_leo2u"]
+
+[resource]
+script = ExtResource("1_leo2u")
+id = &"falcon"
+title = ""
+cost = 10
+description = ""
+metadata/_custom_type_script = "uid://cd5nqxu4812v8"
