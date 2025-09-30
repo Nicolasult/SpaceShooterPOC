@@ -7,7 +7,7 @@ signal levels_unlocked_changed(unlocked_max: int)   # émis quand on débloque u
 var _save_path: String = "user://save.json"
 
 var difficulty: String = "Normal"
-var unlocked_level: int = 1           # niveau max débloqué (ex: 1 => niveaux 0 et 1 accessibles si tu es en index 0-based)
+var unlocked_level: int = 0           # niveau max débloqué (ex: 1 => niveaux 0 et 1 accessibles si tu es en index 0-based)
 var best_times: Dictionary = {}       # ex: {"L1:Normal": 32.5}
 
 var coins_run: int = 0                # gagné depuis le début du niveau courant
