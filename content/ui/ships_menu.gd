@@ -17,11 +17,10 @@ func _ready() -> void:
 	if prog:
 		if not prog.is_connected("coins_changed", Callable(self, "_on_coins_changed")):
 			prog.connect("coins_changed", Callable(self, "_on_coins_changed"))
-		if not prog.is_connected("ships_changed", Callable(self, "_rebuild")):
-			prog.connect("ships_changed", Callable(self, "_rebuild"))
-		if not prog.is_connected("selected_ship_changed", Callable(self, "_rebuild")):
-			prog.connect("selected_ship_changed", Callable(self, "_rebuild"))
-
+		if not prog.is_connected("ships_changed", Callable(self, "_on_ships_changed")):
+			prog.connect("ships_changed", Callable(self, "_on_ships_changed"))
+		if not prog.is_connected("selected_ship_changed", Callable(self, "_on_selected_changed")):
+			prog.connect("selected_ship_changed", Callable(self, "_on_selected_changed"))
 	_update_coins_label()
 	_rebuild()
 
@@ -143,3 +142,9 @@ func _on_select_pressed(id: StringName) -> void:
 	if prog and prog.has_method("select_ship"):
 		if prog.select_ship(id):
 			_rebuild()
+			
+func _on_ships_changed() -> void:
+	_rebuild()
+
+func _on_selected_changed(_id: StringName) -> void:
+	_rebuild()
