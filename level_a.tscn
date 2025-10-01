@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://by3mhndoqjshx"]
+[gd_scene load_steps=12 format=3 uid="uid://by3mhndoqjshx"]
 
 [ext_resource type="Script" uid="uid://c8yrmck8mr0kj" path="res://level_a.gd" id="1_cok7h"]
 [ext_resource type="PackedScene" uid="uid://bexqof1csimsb" path="res://gameplay/spawning/spawner.tscn" id="1_frwqc"]
 [ext_resource type="Script" uid="uid://dv3wx3aqf8rns" path="res://gameplay/spawning/wave.gd" id="2_n6cyk"]
+[ext_resource type="Script" uid="uid://cd5nqxu4812v8" path="res://content/ships/ship_info.gd" id="2_np7es"]
+[ext_resource type="Resource" uid="uid://dxrg56wmft2e0" path="res://content/ships/starter.tres" id="3_cok7h"]
+[ext_resource type="Resource" uid="uid://dedd3uwfnf5sv" path="res://content/ships/falcon.tres" id="4_b52hd"]
 [ext_resource type="Resource" uid="uid://dn52loom37b8e" path="res://gameplay/spawning/level_a/wave_a1/wave1.tres" id="4_va7m1"]
 [ext_resource type="Script" uid="uid://iil5tspmd1jy" path="res://ui/wave_banner.gd" id="5_fcqga"]
 [ext_resource type="PackedScene" uid="uid://2g5gt6cvs7mi" path="res://content/effects/space_background.tscn" id="7_w3qxq"]
@@ -11,6 +14,7 @@
 
 [node name="LevelA" type="Node2D"]
 script = ExtResource("1_cok7h")
+ships_catalog = Array[ExtResource("2_np7es")]([ExtResource("3_cok7h"), ExtResource("4_b52hd")])
 
 [node name="HUDHealth" parent="." instance=ExtResource("11_np7es")]
 visible = false
