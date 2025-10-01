@@ -31,11 +31,11 @@ var selected_ship: StringName = &"starter"
 var life_level: int = 0
 var damage_level: int = 0
 
-var life_base_cost: int = 50
+var life_base_cost: int = 5
 var life_cost_growth: float = 1.5
 var life_per_level: int = 20            # +20 HP par niveau
 
-var damage_base_cost: int = 50
+var damage_base_cost: int = 5
 var damage_cost_growth: float = 1.5
 var damage_per_level: float = 2.0       # +2 dégâts par niveau
 
