@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1o4sbxoqnpn8"]
+[gd_scene load_steps=9 format=3 uid="uid://c1o4sbxoqnpn8"]
 
 [ext_resource type="PackedScene" uid="uid://cw7mysef2xmv7" path="res://content/enemies/enemy.tscn" id="1_urhrc"]
 [ext_resource type="Texture2D" uid="uid://cs7gy2hfk643j" path="res://assets/blue_enemy.png" id="2_i2c7b"]
@@ -7,6 +7,9 @@
 radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8uf2d"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wxcqg"]
 radius = 7.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8uf2d"]
@@ -39,13 +42,16 @@ shape = SubResource("CircleShape2D_i2c7b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageDealer" index="0"]
 shape = SubResource("CircleShape2D_8uf2d")
 
-[node name="AnimatedSprite2D" parent="." index="2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+shape = SubResource("CircleShape2D_wxcqg")
+
+[node name="AnimatedSprite2D" parent="." index="3"]
 sprite_frames = SubResource("SpriteFrames_gs726")
 autoplay = "default"
 frame_progress = 0.516344
 
-[node name="Health" parent="." index="3"]
-max_hp = 50.0
+[node name="Health" parent="." index="4"]
+max_hp = 250.0
 
-[node name="Stats" parent="." index="4"]
-base_max_hp = 50.0
+[node name="Stats" parent="." index="5"]
+base_max_hp = 250.0
