@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bdlp27bjtg4ea"]
+
+[node name="UpgradesMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="VBox"]
+layout_mode = 2
+text = "Upgrades"
+
+[node name="Coins" type="Label" parent="VBox"]
+layout_mode = 2
+text = "Coins: 0"
+
+[node name="LifeRow" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="LifeLabel" type="Label" parent="VBox/LifeRow"]
+layout_mode = 2
+text = "Increase Life"
+
+[node name="LifeInfo" type="Label" parent="VBox/LifeRow"]
+layout_mode = 2
+text = "Level 0 (+0 HP) | Cost 50"
+
+[node name="BtnLife" type="Button" parent="VBox/LifeRow"]
+layout_mode = 2
+text = "Upgrade"
+
+[node name="DamageRow" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="DamageLabel" type="Label" parent="VBox/DamageRow"]
+layout_mode = 2
+text = "Increase Damage"
+
+[node name="DamageInfo" type="Label" parent="VBox/DamageRow"]
+layout_mode = 2
+text = "Level 0 (+0 dmg) | Cost 50"
+
+[node name="BtnDamage" type="Button" parent="VBox/DamageRow"]
+layout_mode = 2
+text = "Upgrade"
+
+[node name="BtnBack" type="Button" parent="VBox"]
+layout_mode = 2
+text = "Back"
