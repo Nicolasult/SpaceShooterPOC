@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdlp27bjtg4ea"]
+[gd_scene load_steps=7 format=3 uid="uid://bdlp27bjtg4ea"]
 
 [ext_resource type="Script" uid="uid://boxmyh3enwkpj" path="res://content/ui/upgrades_menu.gd" id="1_b6571"]
+[ext_resource type="PackedScene" uid="uid://2g5gt6cvs7mi" path="res://content/effects/space_background.tscn" id="2_0so43"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0so43"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_lym64"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_ugr5h"]
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_kjsss"]
+font_size = 12
 
 [node name="UpgradesMenu" type="Control"]
 layout_mode = 3
@@ -11,49 +24,58 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b6571")
 
-[node name="VBox" type="VBoxContainer" parent="."]
+[node name="SpaceBackground" parent="." instance=ExtResource("2_0so43")]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
-[node name="Title" type="Label" parent="VBox"]
+[node name="VBox" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-text = "Upgrades"
 
-[node name="Coins" type="Label" parent="VBox"]
+[node name="Coins" type="Label" parent="MarginContainer/VBox"]
 layout_mode = 2
 text = "Coins: 0"
 
-[node name="LifeRow" type="HBoxContainer" parent="VBox"]
-layout_mode = 2
-
-[node name="LifeLabel" type="Label" parent="VBox/LifeRow"]
+[node name="LifeLabel" type="Label" parent="MarginContainer/VBox"]
 layout_mode = 2
 text = "Increase Life"
+label_settings = SubResource("LabelSettings_0so43")
 
-[node name="LifeInfo" type="Label" parent="VBox/LifeRow"]
+[node name="LifeInfo" type="Label" parent="MarginContainer/VBox"]
 layout_mode = 2
 text = "Level 0 (+0 HP) | Cost 50"
+label_settings = SubResource("LabelSettings_lym64")
 
-[node name="BtnLife" type="Button" parent="VBox/LifeRow"]
+[node name="BtnLife" type="Button" parent="MarginContainer/VBox"]
 layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 10
 text = "Upgrade"
 
-[node name="DamageRow" type="HBoxContainer" parent="VBox"]
-layout_mode = 2
-
-[node name="DamageLabel" type="Label" parent="VBox/DamageRow"]
+[node name="DamageLabel" type="Label" parent="MarginContainer/VBox"]
 layout_mode = 2
 text = "Increase Damage"
+label_settings = SubResource("LabelSettings_ugr5h")
 
-[node name="DamageInfo" type="Label" parent="VBox/DamageRow"]
+[node name="DamageInfo" type="Label" parent="MarginContainer/VBox"]
 layout_mode = 2
 text = "Level 0 (+0 dmg) | Cost 50"
+label_settings = SubResource("LabelSettings_kjsss")
 
-[node name="BtnDamage" type="Button" parent="VBox/DamageRow"]
+[node name="BtnDamage" type="Button" parent="MarginContainer/VBox"]
 layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 10
 text = "Upgrade"
 
-[node name="BtnBack" type="Button" parent="VBox"]
+[node name="BtnBack" type="Button" parent="MarginContainer/VBox"]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 text = "Back"
