@@ -76,9 +76,16 @@ func _spawn_selected_player() -> void:
 			push_error("Level: aucun ShipInfo/scene valide pour instancier le Player")
 			return
 
+	# --- Instanciation du joueur ---
 	var player: Node2D = chosen.scene.instantiate() as Node2D
 	player.global_position = spawn.global_position
 	get_tree().current_scene.add_child(player)
+
+	# --- Application des upgrades (HP/Dégâts) ---
+	var prog2 := get_node_or_null("/root/Progression")
+	if prog2 and prog2.has_method("apply_upgrades_to"):
+		prog2.apply_upgrades_to(player)
+
 
 func _shipinfo_by_id(id: StringName) -> ShipInfo:
 	for s in ships_catalog:
