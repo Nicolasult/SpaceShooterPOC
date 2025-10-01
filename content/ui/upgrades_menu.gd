@@ -2,12 +2,12 @@ extends Control
 
 @export var back_scene_path: String = "res://content/ui/main_menu.tscn"
 
-@onready var _coins: Label       = $VBox/Coins
-@onready var _life_info: Label   = $VBox/LifeRow/LifeInfo
-@onready var _btn_life: Button   = $VBox/LifeRow/BtnLife
-@onready var _dmg_info: Label    = $VBox/DamageRow/DamageInfo
-@onready var _btn_dmg: Button    = $VBox/DamageRow/BtnDamage
-@onready var _btn_back: Button   = $VBox/BtnBack
+@onready var _coins: Label       = $MarginContainer/VBox/Coins
+@onready var _life_info: Label   = $MarginContainer/VBox/LifeInfo
+@onready var _btn_life: Button   = $MarginContainer/VBox/BtnLife
+@onready var _dmg_info: Label    = $MarginContainer/VBox/DamageInfo
+@onready var _btn_dmg: Button    = $MarginContainer/VBox/BtnDamage
+@onready var _btn_back: Button   = $MarginContainer/VBox/BtnBack
 
 func _ready() -> void:
 	_btn_back.pressed.connect(_on_back)
